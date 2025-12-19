@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { useMemo } from "react";
-import { baseUrl } from "../BaseUrl/BaseUrl"; // Adjusted to match new file location
+import { baseUrl } from "../baseUrl/BaseUrl"; // Adjusted to match new file location
 
 const useApi = () => {
   const token = useSelector((state) => state.auth.token);

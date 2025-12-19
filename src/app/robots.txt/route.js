@@ -1,18 +1,15 @@
-// src/app/robots.txt/route.js
+export const dynamic = "force-static";
 
 export function GET() {
-  const content = `
-User-agent: *
-Disallow: /admin
-Disallow: /api
+  return new Response(
+    `User-agent: *
 Allow: /
 
-Sitemap: https://yourdomain.com/sitemap.xml
-`;
-
-  return new Response(content.trim(), {
-    headers: {
-      "Content-Type": "text/plain"
+Sitemap: https://aditya-tdl.github.io/SalariedAI/sitemap.xml`,
+    {
+      headers: {
+        "Content-Type": "text/plain",
+      },
     }
-  });
+  );
 }

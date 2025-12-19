@@ -20,8 +20,8 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import GoogleIcon from "@mui/icons-material/Google";
 import AppleIcon from "@mui/icons-material/Apple";
 // import { baseUrl } from "@/Components/Url/BaseUrl";
-import { baseUrl } from "../../Components/BaseUrl/BaseUrl";
-import { openSnackbar } from "../../Components/ReduxToolkit/Slices/snackbarSlice";
+import { baseUrl } from "../../components/baseUrl/BaseUrl";
+import { openSnackbar } from "../../components/ReduxToolkit/Slices/snackbarSlice";
 
 export default function Signup() {
   const dispatch = useDispatch();
@@ -80,7 +80,7 @@ export default function Signup() {
           role_name: role,
         }),
       });
-   const data = await res.json();
+      const data = await res.json();
       console.log("Signup Response:", data);
 
       if (res.ok) {
@@ -101,7 +101,7 @@ export default function Signup() {
           gender: "",
         });
       } else {
-       
+
         dispatch(
           openSnackbar({
             severity: "error",
@@ -262,7 +262,7 @@ export default function Signup() {
                     name="email"
                     label="Email"
                     fullWidth
-                    
+
                     value={formData.email}
                     onChange={handleChange}
                     error={!!errors.email}
@@ -307,7 +307,7 @@ export default function Signup() {
                     label="Gender"
                     select
                     fullWidth
-                    
+
                     value={formData.gender}
                     onChange={handleChange}
                     error={!!errors.gender}
