@@ -8,4 +8,4 @@ const nextConfig = {
   assetPrefix: "/SalariedAI/",
 };
 
-module.exports = nextConfig;
+export default nextConfig;
