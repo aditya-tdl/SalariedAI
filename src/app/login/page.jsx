@@ -48,71 +48,72 @@ export default function Login() {
     e.preventDefault();
     // dispatch(showLoader());
 
-    let valid = true;
-    const newErrors = { email: "", password: "" };
+    // let valid = true;
+    // const newErrors = { email: "", password: "" };
 
-    if (!formData.email) {
-      newErrors.email = "Email is required";
-      valid = false;
-    } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = "Invalid email format";
-      valid = false;
-    }
+    // if (!formData.email) {
+    //   newErrors.email = "Email is required";
+    //   valid = false;
+    // } else if (!emailRegex.test(formData.email)) {
+    //   newErrors.email = "Invalid email format";
+    //   valid = false;
+    // }
 
-    if (!formData.password) {
-      newErrors.password = "Password is required";
-      valid = false;
-    } else if (formData.password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters";
-      valid = false;
-    }
+    // if (!formData.password) {
+    //   newErrors.password = "Password is required";
+    //   valid = false;
+    // } else if (formData.password.length < 6) {
+    //   newErrors.password = "Password must be at least 6 characters";
+    //   valid = false;
+    // }
 
-    setErrors(newErrors);
+    // setErrors(newErrors);
 
-    if (!valid) {
-      //   dispatch(hideLoader());
-      return;
-    }
+    // if (!valid) {
+    //   //   dispatch(hideLoader());
+    //   return;
+    // }
+    router.push("/profile");
 
-    try {
-      const response = await api.post("/api/user/login", {
-        username: formData.email,
-        password: formData.password,
-      });
-      console.log("API response:", response.data);
+    // try {
+    //   const response = await api.post("/api/user/login", {
+    //     username: formData.email,
+    //     password: formData.password,
+    //   });
+    //   console.log("API response:", response.data);
 
-      if (response.data.status) {
-        dispatch(
-          login({
-            user: {
-              name: `${response.data.data.first_name} ${response.data.data.last_name}`,
-              email: response.data.data.email,
-              role: response.data.data.role_name,
-              id: response.data.data.user_id,
-            },
-            token: response.data.token,
-          })
-        );
-        // dispatch(hideLoader());
-        // dispatch(
-        //   showSnackbar({
-        //     severity: "success"
-        //     message: "Logged in successfully",
-        //   })
-        // );
+    //   if (response.data.status) {
+    //     dispatch(
+    //       login({
+    //         user: {
+    //           name: `${response.data.data.first_name} ${response.data.data.last_name}`,
+    //           email: response.data.data.email,
+    //           role: response.data.data.role_name,
+    //           id: response.data.data.user_id,
+    //         },
+    //         token: response.data.token,
+    //       })
+    //     );
+    //     // dispatch(hideLoader());
+    //     // dispatch(
+    //     //   showSnackbar({
+    //     //     severity: "success"
+    //     //     message: "Logged in successfully",
+    //     //   })
+    //     // );
 
-        setFormData({ email: "", password: "" });
-        router.push("/profile");
-      } else {
-        setApiError("Invalid login credentials.");
+    //     setFormData({ email: "", password: "" });
+    //     router.push("/profile");
+    //   } else {
+    //     setApiError("Invalid login credentials.");
 
-        // dispatch(hideLoader());
-      }
-    } catch (error) {
-      //   dispatch(hideLoader());
-      console.error("Login error:", error);
-      setApiError(error.response?.data?.message || "Something went wrong");
-    }
+    //     // dispatch(hideLoader());
+    //   }
+    // } catch (error) {
+    //   //   dispatch(hideLoader());
+    //   console.error("Login error:", error);
+    //   setApiError(error.response?.data?.message || "Something went wrong");
+    // }
   };
 
   return (
