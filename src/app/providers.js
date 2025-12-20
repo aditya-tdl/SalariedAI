@@ -1,8 +1,8 @@
 "use client";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { Provider } from "react-redux";
-import SnackBar from "@/components/ReduxToolkit/Components/SnackbarProvider";
-import Loader from "@/components/ReduxToolkit/Components/Loader";
+import SnackBar from "@/components/ReduxToolkit/components/SnackbarProvider";
+import Loader from "@/components/ReduxToolkit/components/Loader";
 import ScrollToTop from "@/components/ScrollToTop/ScrollToTop";
 import store from "@/components/ReduxToolkit/Store/store";
 import { ThemeContext } from "@/components/Theme/theme";
