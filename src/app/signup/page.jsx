@@ -19,7 +19,7 @@ import {
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import GoogleIcon from "@mui/icons-material/Google";
 import AppleIcon from "@mui/icons-material/Apple";
-// import { baseUrl } from "@/Components/Url/BaseUrl";
+// import { baseUrl } from "@/components/Url/BaseUrl";
 import { baseUrl } from "../../components/baseUrl/BaseUrl";
 import { openSnackbar } from "../../components/ReduxToolkit/Slices/snackbarSlice";
 

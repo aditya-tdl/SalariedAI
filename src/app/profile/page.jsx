@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Box, Typography, Avatar, Button, Grid } from "@mui/material";
-import GlobalWrapper from "@/Components/layouts/GlobalWrapper";
+import GlobalWrapper from "@/components/layouts/GlobalWrapper";
 import ClientOnly from "@/app/signup/ClientOnly";
 
 export default function Profile() {
@@ -19,7 +19,7 @@ export default function Profile() {
   return (
     <GlobalWrapper>
       <ClientOnly>
-    
+
         <Box
           sx={{
             height: "100vh",
